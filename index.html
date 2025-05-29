@@ -1,104 +1,64 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blog Saya</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
-    }
-    
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #34495e;
-      padding: 1rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
-    }
-
-    nav a:hover {
-      color: #3498db;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .blog-post {
-      background-color: white;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .blog-post h2 {
-      color: #2c3e50;
-      margin-top: 0;
-    }
-
-    .blog-post .date {
-      color: #7f8c8d;
-      font-size: 0.9rem;
-    }
-
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Cybersecurity</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Blog Saya</h1>
-  </header>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Menu Cybersecurity</h2>
+            <ul class="sidebar-menu">
+                <li><a href="articles/firewall/index.html">Firewall</a></li>
+                <li><a href="articles/ids-ips/index.html">IDS/IPS</a></li>
+                <li><a href="articles/theharvester/index.html">TheHarvester</a></li>
+                <li><a href="#network-security">Network Security</a></li>
+                <li><a href="#penetration-testing">Penetration Testing</a></li>
+                <li><a href="#malware-analysis">Malware Analysis</a></li>
+            </ul>
+        </div>
 
-  <nav>
-    <a href="#beranda">Beranda</a>
-    <a href="#artikel">Artikel</a>
-    <a href="#tentang">Tentang</a>
-    <a href="#kontak">Kontak</a>
-  </nav>
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1>Learn Cybersecurity</h1>
+            </header>
 
-  <div class="container">
-    <article class="blog-post">
-      <h2>Selamat Datang di Blog Saya</h2>
-      <div class="date">1 Maret 2024</div>
-      <p>Ini adalah artikel pertama di blog saya. Di sini saya akan berbagi berbagai hal menarik tentang teknologi, pemrograman, dan hal-hal lainnya.</p>
-    </article>
+            <div class="article">
+                <h1>Selamat Datang di Learn Cybersecurity</h1>
+                <p>Website ini berisi berbagai artikel tentang keamanan siber yang akan membantu Anda memahami konsep-konsep penting dalam cybersecurity.</p>
+                <p>Silakan pilih topik yang ingin Anda pelajari dari menu di sebelah kiri.</p>
+            </div>
 
-    <article class="blog-post">
-      <h2>Mengenal Cybersecurity</h2>
-      <div class="date">28 Februari 2024</div>
-      <p>Cybersecurity adalah praktik melindungi sistem, jaringan, dan program dari serangan digital. Mari kita pelajari lebih dalam tentang pentingnya keamanan siber di era digital ini.</p>
-    </article>
-  </div>
+            <div class="article" id="network-security">
+                <h1>Network Security</h1>
+                <div class="under-writing">
+                    <p>Artikel tentang Network Security sedang dalam penulisan...</p>
+                </div>
+            </div>
 
-  <footer>
-    <p>&copy; 2024 Blog Saya. Hak Cipta Dilindungi.</p>
-  </footer>
+            <div class="article" id="penetration-testing">
+                <h1>Penetration Testing</h1>
+                <div class="under-writing">
+                    <p>Artikel tentang Penetration Testing sedang dalam penulisan...</p>
+                </div>
+            </div>
+
+            <div class="article" id="malware-analysis">
+                <h1>Malware Analysis</h1>
+                <div class="under-writing">
+                    <p>Artikel tentang Malware Analysis sedang dalam penulisan...</p>
+                </div>
+            </div>
+
+            <footer>
+                <p>&copy; 2024 Learn Cybersecurity. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
