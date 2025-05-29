@@ -3,21 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Website Saya</title>
+  <title>Blog Saya</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f0f8ff;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
       color: #333;
+      line-height: 1.6;
     }
-    h1 {
-      color: #007acc;
+    
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #34495e;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    nav a:hover {
+      color: #3498db;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .blog-post {
+      background-color: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .blog-post h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+
+    .blog-post .date {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
 <body>
-  <h1>Selamat datang di website saya!</h1>
-  <p>Ini adalah website statis yang di-host di GitHub Pages.</p>
+  <header>
+    <h1>Blog Saya</h1>
+  </header>
+
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#artikel">Artikel</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <div class="container">
+    <article class="blog-post">
+      <h2>Selamat Datang di Blog Saya</h2>
+      <div class="date">1 Maret 2024</div>
+      <p>Ini adalah artikel pertama di blog saya. Di sini saya akan berbagi berbagai hal menarik tentang teknologi, pemrograman, dan hal-hal lainnya.</p>
+    </article>
+
+    <article class="blog-post">
+      <h2>Mengenal Cybersecurity</h2>
+      <div class="date">28 Februari 2024</div>
+      <p>Cybersecurity adalah praktik melindungi sistem, jaringan, dan program dari serangan digital. Mari kita pelajari lebih dalam tentang pentingnya keamanan siber di era digital ini.</p>
+    </article>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Blog Saya. Hak Cipta Dilindungi.</p>
+  </footer>
 </body>
 </html>
