@@ -11,39 +11,50 @@
         <nav>
             <div class="container">
                 <h1>Blog Pembelajaran</h1>
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="artikel.html">Artikel</a></li>
-                    <li><a href="tentang.html">Tentang</a></li>
-                </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <div class="container">
-            <section class="hero">
-                <h2>Selamat Datang di Blog Pembelajaran</h2>
-                <p>Temukan berbagai artikel menarik tentang pembelajaran dan pengembangan diri</p>
-            </section>
+    <div class="main-container">
+        <!-- Sidebar Menu -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <h3>Menu Artikel</h3>
+                <ul>
+                    <li><a href="artikel/belajar-efektif.html" data-artikel="belajar-efektif">Belajar Efektif di Era Digital</a></li>
+                    <li><a href="artikel/manajemen-waktu.html" data-artikel="manajemen-waktu">Manajemen Waktu yang Efektif</a></li>
+                    <li><a href="artikel/teknik-membaca.html" data-artikel="teknik-membaca">Teknik Membaca Cepat</a></li>
+                    <li><a href="artikel/motivasi-belajar.html" data-artikel="motivasi-belajar">Tips Mempertahankan Motivasi Belajar</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-            <section class="featured-posts">
-                <h3>Artikel Terbaru</h3>
-                <div class="post-grid">
-                    <article class="post-card">
-                        <h4>Belajar Efektif di Era Digital</h4>
-                        <p>Tips dan trik untuk memaksimalkan pembelajaran di era digital...</p>
-                        <a href="#" class="read-more">Baca Selengkapnya</a>
-                    </article>
-                    <article class="post-card">
-                        <h4>Manajemen Waktu yang Efektif</h4>
-                        <p>Bagaimana mengatur waktu dengan baik untuk belajar...</p>
-                        <a href="#" class="read-more">Baca Selengkapnya</a>
-                    </article>
-                </div>
-            </section>
-        </div>
-    </main>
+        <!-- Main Content -->
+        <main class="content">
+            <div class="container">
+                <section class="hero">
+                    <h2>Selamat Datang di Blog Pembelajaran</h2>
+                    <p>Temukan berbagai artikel menarik tentang pembelajaran dan pengembangan diri</p>
+                </section>
+
+                <section class="featured-posts">
+                    <h3>Artikel Terbaru</h3>
+                    <div class="post-grid">
+                        <article class="post-card">
+                            <h4>Belajar Efektif di Era Digital</h4>
+                            <p>Tips dan trik untuk memaksimalkan pembelajaran di era digital...</p>
+                            <a href="artikel/belajar-efektif.html" class="read-more">Baca Selengkapnya</a>
+                        </article>
+                        <article class="post-card">
+                            <h4>Manajemen Waktu yang Efektif</h4>
+                            <p>Bagaimana mengatur waktu dengan baik untuk belajar...</p>
+                            <a href="artikel/manajemen-waktu.html" class="read-more">Baca Selengkapnya</a>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
 
     <footer>
         <div class="container">

@@ -1,10 +1,32 @@
-// Smooth scroll untuk navigasi
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+// Fungsi untuk memuat artikel
+async function loadArtikel(url) {
+    try {
+        const response = await fetch(url);
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const artikelContent = doc.querySelector('.artikel-content');
+        
+        if (artikelContent) {
+            document.querySelector('.content').innerHTML = artikelContent.outerHTML;
+            // Scroll ke atas konten
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    } catch (error) {
+        console.error('Error loading artikel:', error);
+    }
+}
+
+// Event listener untuk link artikel
+document.querySelectorAll('.sidebar-nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const url = link.getAttribute('href');
+        loadArtikel(url);
+        
+        // Update active state
+        document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
     });
 });
 
@@ -30,12 +52,12 @@ postCards.forEach(card => {
 
 // Toggle mobile menu
 const createMobileMenu = () => {
-    const nav = document.querySelector('nav ul');
+    const nav = document.querySelector('.sidebar-nav');
     const menuButton = document.createElement('button');
     menuButton.classList.add('mobile-menu-button');
     menuButton.innerHTML = '☰';
     
-    document.querySelector('nav .container').prepend(menuButton);
+    document.querySelector('.sidebar').prepend(menuButton);
     
     menuButton.addEventListener('click', () => {
         nav.classList.toggle('active');
