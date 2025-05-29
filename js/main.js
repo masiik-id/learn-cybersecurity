@@ -2,18 +2,26 @@
 async function loadArtikel(url) {
     try {
         const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const html = await response.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         const artikelContent = doc.querySelector('.artikel-content');
         
         if (artikelContent) {
-            document.querySelector('.content').innerHTML = artikelContent.outerHTML;
+            const contentArea = document.querySelector('.content');
+            contentArea.innerHTML = artikelContent.outerHTML;
             // Scroll ke atas konten
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Update URL tanpa refresh
+            history.pushState({}, '', url);
         }
     } catch (error) {
         console.error('Error loading artikel:', error);
+        alert('Maaf, terjadi kesalahan saat memuat artikel. Silakan coba lagi.');
     }
 }
 
@@ -22,12 +30,28 @@ document.querySelectorAll('.sidebar-nav a').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const url = link.getAttribute('href');
-        loadArtikel(url);
         
         // Update active state
         document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
         link.classList.add('active');
+        
+        // Load artikel
+        loadArtikel(url);
+        
+        // Tutup menu mobile jika terbuka
+        const sidebarNav = document.querySelector('.sidebar-nav');
+        if (sidebarNav.classList.contains('active')) {
+            sidebarNav.classList.remove('active');
+        }
     });
+});
+
+// Handle browser back/forward buttons
+window.addEventListener('popstate', () => {
+    const currentPath = window.location.pathname;
+    if (currentPath.includes('artikel/')) {
+        loadArtikel(currentPath);
+    }
 });
 
 // Animasi untuk post cards
